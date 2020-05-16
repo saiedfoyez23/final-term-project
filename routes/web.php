@@ -10,11 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::redirect('lara-admin','login');
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
 Auth::routes();
 
 Route::get('/','HomeController@index')->name('welcome');
